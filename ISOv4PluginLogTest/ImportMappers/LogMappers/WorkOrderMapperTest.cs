@@ -73,7 +73,7 @@ namespace ISOv4PluginLogTest.ImportMappers.LogMappers
             grower.Id.UniqueIds.Add(new UniqueId
             {
                 Source = UniqueIdMapper.IsoSource,
-                CiTypeEnum = CompoundIdentifierTypeEnum.String,
+                IdType = IdTypeEnum.String,
                 Id = _task.C,
             });
             _dataModel.Catalog.Growers.Add(grower);
@@ -90,7 +90,7 @@ namespace ISOv4PluginLogTest.ImportMappers.LogMappers
             farm.Id.UniqueIds.Add(new UniqueId
             {
                 Source = UniqueIdMapper.IsoSource,
-                CiTypeEnum = CompoundIdentifierTypeEnum.String,
+                IdType = IdTypeEnum.String,
                 Id = _task.D,
             });
             _dataModel.Catalog.Farms.Add(farm);
@@ -107,7 +107,7 @@ namespace ISOv4PluginLogTest.ImportMappers.LogMappers
             field.Id.UniqueIds.Add(new UniqueId
             {
                 Source = UniqueIdMapper.IsoSource,
-                CiTypeEnum = CompoundIdentifierTypeEnum.String,
+                IdType = IdTypeEnum.String,
                 Id = _task.E,
             });
             _dataModel.Catalog.Fields.Add(field);
@@ -125,7 +125,7 @@ namespace ISOv4PluginLogTest.ImportMappers.LogMappers
             person.Id.UniqueIds.Add(new UniqueId
             {
                 Source = UniqueIdMapper.IsoSource,
-                CiTypeEnum = CompoundIdentifierTypeEnum.String,
+                IdType = IdTypeEnum.String,
                 Id = _task.F,
             });
             _dataModel.Catalog.Persons.Add(person);

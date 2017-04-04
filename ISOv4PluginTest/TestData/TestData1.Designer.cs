@@ -114,7 +114,8 @@ namespace ISOv4PluginTest.TestData {
         ///
         ///  &lt;CCT A=&quot;CCT1&quot; B=&quot;Comment 1&quot; C=&quot;2&quot;&gt;
         ///    &lt;CCL A=&quot;CCL1&quot; B=&quot;Comment value 1&quot; /&gt;
-        ///    &lt;CCL A=&quot;CCL2&quot; B=&quot;Comment value 2&quot; /&gt;        /// [rest of string was truncated]&quot;;.
+        ///    &lt;CCL A=&quot;CCL2&quot; B=&quot;Comment value 2&quot; /&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Comment1 {
             get {
@@ -154,7 +155,8 @@ namespace ISOv4PluginTest.TestData {
         ///
         ///  &lt;CCT A=&quot;CCT1&quot; B=&quot;Comment 1&quot; C=&quot;2&quot;&gt;
         ///    &lt;CCL A=&quot;CCL1&quot; B=&quot;Comment value 1&quot; /&gt;
-        ///    &lt;CCL A=&quot;CCL2&quot; B=&quot;Comment value 2&quot; /&gt;        /// [rest of string was truncated]&quot;;.
+        ///    &lt;CCL A=&quot;CCL2&quot; B=&quot;Comment value 2&quot; /&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Comment2 {
             get {
@@ -197,7 +199,8 @@ namespace ISOv4PluginTest.TestData {
         ///    &lt;CCL A=&quot;CCL1&quot; B=&quot;Comment value 1&quot; /&gt;
         ///    &lt;CCL A=&quot;CCL2&quot; B=&quot;Comment value 2&quot; /&gt;
         ///  &lt;/CCT&gt;
-        ///          /// [rest of string was truncated]&quot;;.
+        ///  
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Comment4 {
             get {
@@ -259,7 +262,8 @@ namespace ISOv4PluginTest.TestData {
         ///
         ///  &lt;CCT A=&quot;CCT1&quot; B=&quot;Comment 1&quot; C=&quot;6&quot;&gt;
         ///    &lt;CCL A=&quot;CCL1&quot; B=&quot;Comment value 1&quot; /&gt;
-        ///    &lt;CCL A=&quot;CCL2&quot; B=&quot;Comment value 2&quot; /&gt;        /// [rest of string was truncated]&quot;;.
+        ///    &lt;CCL A=&quot;CCL2&quot; B=&quot;Comment value 2&quot; /&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Comment7 {
             get {
