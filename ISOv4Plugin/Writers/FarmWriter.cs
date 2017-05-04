@@ -52,12 +52,12 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
             if (contactInfo == null)
                 return;
 
-            writer.WriteXmlAttribute("D", contactInfo.AddressLine1);
-            writer.WriteXmlAttribute("E", contactInfo.PoBoxNumber);
-            writer.WriteXmlAttribute("F", contactInfo.PostalCode);
-            writer.WriteXmlAttribute("G", contactInfo.City);
-            writer.WriteXmlAttribute("H", contactInfo.StateOrProvince);
-            writer.WriteXmlAttribute("I", contactInfo.Country);
+            writer.WriteXmlAttribute("C", contactInfo.AddressLine1);
+            writer.WriteXmlAttribute("D", contactInfo.PoBoxNumber);
+            writer.WriteXmlAttribute("E", contactInfo.PostalCode);
+            writer.WriteXmlAttribute("F", contactInfo.City);
+            writer.WriteXmlAttribute("G", contactInfo.StateOrProvince);
+            writer.WriteXmlAttribute("H", contactInfo.Country);
         }
 
         private void WriteCustomerReference(XmlWriter writer, int? growerId)

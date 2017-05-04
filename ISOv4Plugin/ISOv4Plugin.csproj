@@ -53,6 +53,10 @@
       <HintPath>..\packages\Moq.4.7.8\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -103,6 +107,8 @@
     <Compile Include="Extensions\XmlExtensions.cs" />
     <Compile Include="ImportHelper.cs" />
     <Compile Include="ExportMappers\PolygonMapper.cs" />
+    <Compile Include="ImportMappers\IngredientJsonMapper.cs" />
+    <Compile Include="ImportMappers\ProductJsonMapper.cs" />
     <Compile Include="ImportMappers\LogMappers\ActualLoadingSystemStatusMeterCreator.cs" />
     <Compile Include="ImportMappers\LogMappers\BinaryReader.cs" />
     <Compile Include="ImportMappers\LogMappers\CondensedWorkStateMeterCreator.cs" />

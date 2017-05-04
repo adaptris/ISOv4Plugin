@@ -156,6 +156,36 @@ namespace AgGateway.ADAPT.ISOv4Plugin
             return taskDocument;
         }
 
+		public static ApplicationDataModel.ADM.ApplicationDataModel ConvertTaskDataDocumentToModel(TaskDataDocument taskDocument)
+		{
+			var dataModel = new ApplicationDataModel.ADM.ApplicationDataModel();
+
+			var catalog = new Catalog();
+			catalog.Growers = taskDocument.Customers.Values.ToList();
+			catalog.Farms = taskDocument.Farms.Values.ToList();
+			catalog.Fields = taskDocument.Fields.Values.ToList();
+			catalog.GuidanceGroups = taskDocument.GuidanceGroups.Values.Select(x => x.Group).ToList();
+			catalog.GuidancePatterns = taskDocument.GuidanceGroups.Values.SelectMany(x => x.Patterns.Values).ToList();
+			catalog.Crops = taskDocument.Crops.Values.ToList();
+			catalog.CropZones = taskDocument.CropZones.Values.ToList();
+			catalog.DeviceElements = taskDocument.Machines.Values.ToList();
+			catalog.FieldBoundaries = taskDocument.FieldBoundaries;
+			catalog.Ingredients = taskDocument.Ingredients;
+			catalog.Prescriptions = taskDocument.RasterPrescriptions.Cast<Prescription>().ToList();
+			catalog.ContactInfo = taskDocument.Contacts;
+			catalog.Products = AddAllProducts(taskDocument);
+
+			dataModel.Catalog = catalog;
+
+			var documents = new Documents();
+			documents.GuidanceAllocations = taskDocument.GuidanceAllocations;
+			documents.LoggedData = taskDocument.Tasks;
+
+			dataModel.Documents = documents;
+
+			return dataModel;
+		}
+
         private static List<Product> AddAllProducts(TaskDataDocument taskDocument)
         {
             var products = new List<Product>();

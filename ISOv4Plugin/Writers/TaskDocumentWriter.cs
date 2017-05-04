@@ -57,6 +57,20 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
             return RootWriter;
         }
 
+		public XmlWriter Write(ApplicationDataModel.ADM.ApplicationDataModel dataModel)
+		{
+			DataModel = dataModel;
+
+			XmlStream = new MemoryStream();
+			RootWriter = CreateWriter(XmlStream);
+			RootWriter.WriteStartDocument();
+
+			IsoRootWriter.Write(this);
+			RootWriter.Flush();
+
+			return RootWriter;
+		}
+
         private void CreateFolderStructure()
         {
             var pathParts = BaseFolder.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
@@ -69,13 +83,18 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
 
         public XmlWriter CreateWriter(string fileName, MemoryStream xmlString)
         {
-            var settings = new XmlWriterSettings
-            {
-                Encoding = new UTF8Encoding(false),
-                Indent = true
-            };
-            return XmlWriter.Create(xmlString, settings);
+            return CreateWriter(xmlString);
         }
+
+		public XmlWriter CreateWriter(MemoryStream xmlString)
+		{
+			var settings = new XmlWriterSettings
+			{
+				Encoding = new UTF8Encoding(false),
+				Indent = true
+			};
+			return XmlWriter.Create(xmlString, settings);
+		}
 
         public void Dispose()
         {

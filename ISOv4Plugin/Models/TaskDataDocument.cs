@@ -93,23 +93,39 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Models
             if (!VerifyIsoVersion())
                 return false;
 
-            LinkedIds = LinkListLoader.Load(this);
-            Units = UnitLoader.Load(this);
-            Customers = CustomerLoader.Load(this);
-            Farms = FarmLoader.Load(this);
-            Crops = CropLoader.Load(this);
-            Fields = FieldLoader.Load(this);
-            Products = ProductLoader.Load(this);
-            ProductMixes = ProductMixLoader.Load(this);
-            Workers = WorkerLoader.Load(this);
-            Comments = CommentLoader.Load(this);
-            Tasks = TaskLoader.Load(this);
+			return loadPart2();
+		}
 
-            RasterPrescriptions = PrescriptionLoader.Load(this);
-            Machines = DeviceLoader.Load(this);
+		public bool LoadFromXML(string xml)
+		{
+			if (!LoadXml(xml))
+				return false;
 
-            return true;
-        }
+			return loadPart2();
+		}
+
+		private bool loadPart2()
+		{
+			if (!VerifyIsoVersion())
+				return false;
+
+			LinkedIds = LinkListLoader.Load(this);
+			Units = UnitLoader.Load(this);
+			Customers = CustomerLoader.Load(this);
+			Farms = FarmLoader.Load(this);
+			Crops = CropLoader.Load(this);
+			Fields = FieldLoader.Load(this);
+			Products = ProductLoader.Load(this);
+			ProductMixes = ProductMixLoader.Load(this);
+			Workers = WorkerLoader.Load(this);
+			Comments = CommentLoader.Load(this);
+			Tasks = TaskLoader.Load(this);
+
+			RasterPrescriptions = PrescriptionLoader.Load(this);
+			Machines = DeviceLoader.Load(this);
+
+			return true;
+		}
 
         private bool LoadXmlFile(string taskDataFile)
         {
@@ -131,6 +147,26 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Models
             }
             return true;
         }
+
+		private bool LoadXml(string xml)
+		{
+			try
+			{
+				_taskDataXmlDocument = new XmlDocument();
+				_taskDataXmlDocument.LoadXml(xml);
+			}
+			catch (XmlException ex)
+			{
+				SetError(ex);
+				return false;
+			}
+			catch (IOException ex)
+			{
+				SetError(ex);
+				return false;
+			}
+			return true;
+		}
 
         private void SetError(Exception ex)
         {

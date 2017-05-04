@@ -7,12 +7,15 @@ using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 using AgGateway.ADAPT.ISOv4Plugin.Extensions;
 using AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers;
 using AgGateway.ADAPT.ISOv4Plugin.Models;
+using Newtonsoft.Json;
+using AgGateway.ADAPT.ISOv4Plugin.ImportMappers;
 
 namespace AgGateway.ADAPT.ISOv4Plugin
 {
     public interface IImporter
     {
         ApplicationDataModel.ADM.ApplicationDataModel Import(ISO11783_TaskData iso11783TaskData, string dataPath, ApplicationDataModel.ADM.ApplicationDataModel dataModel, Dictionary<string, List<UniqueId>> linkedIds);
+		ApplicationDataModel.ADM.ApplicationDataModel Import(string json);
     }
 
     public class Importer : IImporter
@@ -47,6 +50,12 @@ namespace AgGateway.ADAPT.ISOv4Plugin
             _documentMapper.Map(tasks, dataPath, dataModel, linkedIds);
             return dataModel;
         }
+
+		public ApplicationDataModel.ADM.ApplicationDataModel Import(string json)
+		{
+			JsonConverter[] converters = { new ProductJsonMapper(), new IngredientJsonMapper() };
+			return JsonConvert.DeserializeObject<ApplicationDataModel.ADM.ApplicationDataModel>(json, new JsonSerializerSettings() { Converters = converters });
+		}
 
         private static Documents CreateDocuments()
         {
