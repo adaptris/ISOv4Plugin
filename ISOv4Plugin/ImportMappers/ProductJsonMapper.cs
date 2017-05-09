@@ -24,6 +24,8 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers
 					return jo.ToObject<CropProtectionProduct>(serializer);
 				case "AgGateway.ADAPT.ApplicationDataModel.Products.CropVarietyProduct, AgGateway.ADAPT.ApplicationDataModel":
 					return jo.ToObject<CropVarietyProduct>(serializer);
+				case "AgGateway.ADAPT.ApplicationDataModel.Products.MixProduct, AgGateway.ADAPT.ApplicationDataModel":
+					return jo.ToObject<MixProduct>(serializer);
 				case "AgGateway.ADAPT.ApplicationDataModel.Products.HarvestedCommodityProduct, AgGateway.ADAPT.ApplicationDataModel":
 					return jo.ToObject<HarvestedCommodityProduct>(serializer);
 				case "AgGateway.ADAPT.ApplicationDataModel.Products.GenericProduct, AgGateway.ADAPT.ApplicationDataModel":

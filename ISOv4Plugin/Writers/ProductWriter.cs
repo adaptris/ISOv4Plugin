@@ -110,7 +110,8 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
                 productComponent.Quantity.Value == null)
                 return;
 
-            writer.WriteStartElement("PLN");
+            //writer.WriteStartElement("PLN"); // not PRN?
+			writer.WriteStartElement("PRN"); // yes, PRN
             writer.WriteAttributeString("A", productId);
             writer.WriteAttributeString("B", productComponent.Quantity.Value.Value.ToString("F0", CultureInfo.InvariantCulture));
             writer.WriteEndElement();
