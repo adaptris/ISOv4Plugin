@@ -121,8 +121,12 @@
     <Compile Include="Writers\GuidanceGroupWriterTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\RepresentationSystem.xml" />
-    <Content Include="Resources\UnitSystem.xml" />
+    <Content Include="Resources\RepresentationSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\UnitSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\AllocationTimestamp\Timestamp8.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -438,7 +442,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

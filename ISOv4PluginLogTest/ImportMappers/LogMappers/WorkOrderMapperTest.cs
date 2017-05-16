@@ -142,9 +142,11 @@ namespace ISOv4PluginLogTest.ImportMappers.LogMappers
 
             var statusUpdate = new StatusUpdate();
             _statusUpdateMapperMock.Setup(x => x.Map(_task.G)).Returns(statusUpdate);
+            var statusUpdates = new List<StatusUpdate>();
+            statusUpdates.Add(statusUpdate);
 
             var result = MapSingle();
-            Assert.AreSame(statusUpdate, result.StatusUpdates);
+            Assert.AreSame(statusUpdates[0], result.StatusUpdates[0]);
         }
 
         private WorkOrder MapSingle()

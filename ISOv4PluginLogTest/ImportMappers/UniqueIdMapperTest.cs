@@ -37,7 +37,7 @@ namespace ISOv4PluginLogTest.ImportMappers
         }
 
         [Test]
-        public void GivenIdWhenMapThenCiTypeEnumIsMapped()
+        public void GivenIdWhenMapThenIdTypeIsMapped()
         {
             _id = "DLV1";
 
