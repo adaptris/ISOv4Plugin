@@ -60,7 +60,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ExportMappers
                 };
             if (coordinate.Z != 0)
             {
-                map.E = (long) Math.Round(coordinate.Z.GetValueOrDefault(), 0);
+                map.E = (long) Math.Round(coordinate.Z, 0);
             }
 
             return map;

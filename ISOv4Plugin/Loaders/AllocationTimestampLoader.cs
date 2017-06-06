@@ -22,16 +22,16 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Loaders
                 string.IsNullOrEmpty(typeValue))
                 return null;
 
-            var timeStamp1 = ParseDateTime(startTimeValue);
+            var timeStamp1 = ParseDateTime(startTimeValue).Value;
             if (timeStamp1 == null)
                 return null;
 
-            var timeStamp2 = ParseDateTime(timeStampNode.GetXmlNodeValue("@B"));
+            var timeStamp2 = ParseDateTime(timeStampNode.GetXmlNodeValue("@B")).Value;
             if (timeStamp2 == null)
             {
                 var duration = ParseDuration(timeStampNode.GetXmlNodeValue("@C"));
                 if (duration.HasValue)
-                    timeStamp2 = timeStamp1.Value.Add(duration.Value);
+                    timeStamp2 = timeStamp1.Add(duration.Value);
             }
 
             var location = LoadLocation(timeStampNode.SelectSingleNode("PTN"));
@@ -43,7 +43,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Loaders
                 Location1 = location,
                 Location2 = location,
                 DateContext = typeValue == "1" ? DateContextEnum.ProposedStart : DateContextEnum.ActualStart,
-                Duration = timeStamp1.GetValueOrDefault() - timeStamp2.GetValueOrDefault(),
+                Duration = timeStamp1 - timeStamp2,
             };
         }
 

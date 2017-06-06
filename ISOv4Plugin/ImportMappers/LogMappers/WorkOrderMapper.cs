@@ -42,7 +42,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
             var workOrder = new WorkOrder();
             workOrder.Id.UniqueIds.Add(_uniqueIdMapper.Map(task.A));
             workOrder.Description = task.B;
-            workOrder.GrowerId = GetGrower(dataModel.Catalog, task.C);
+            workOrder.GrowerId = GetGrower(dataModel.Catalog, task.C).Value;
             workOrder.FarmIds = GetFarms(dataModel.Catalog, task.D);
             workOrder.FieldIds = GetFields(dataModel.Catalog, task.E);
             workOrder.StatusUpdates = new List<StatusUpdate>();

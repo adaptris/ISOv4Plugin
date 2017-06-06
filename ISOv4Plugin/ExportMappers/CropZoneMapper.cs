@@ -47,16 +47,16 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ExportMappers
             pfd.A = pfd.GetIsoId(cropZoneIndex);
             if (cropZone.CropId != null)
             {
-                pfd.G = keyToIsoId[cropZone.CropId.Value];
+                pfd.G = keyToIsoId[cropZone.CropId];
             }
             pfd.I = keyToIsoId[cropZone.FieldId];
             var field = setupCatalog.Fields.First(f => f.Id.ReferenceId == cropZone.FieldId);
             if (field.FarmId != null)
             {
-                pfd.F = keyToIsoId[field.FarmId.Value];
-                var farm = setupCatalog.Farms.First(f => f.Id.ReferenceId == field.FarmId.Value);
+                pfd.F = keyToIsoId[field.FarmId];
+                var farm = setupCatalog.Farms.First(f => f.Id.ReferenceId == field.FarmId);
                 if (farm.GrowerId != null)
-                    pfd.E = keyToIsoId[farm.GrowerId.Value];
+                    pfd.E = keyToIsoId[farm.GrowerId];
             }
             if (cropZone.BoundingRegion != null)
             {

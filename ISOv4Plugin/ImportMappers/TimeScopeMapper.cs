@@ -29,7 +29,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers
             if (tim.B.HasValue)
                 stamp2 = tim.B.Value;
 
-            var timeScope = new TimeScope {TimeStamp1 = stamp1, TimeStamp2 = stamp2, DateContext = DateContextEnum.ActualStart};
+            var timeScope = new TimeScope {TimeStamp1 = stamp1.Value, TimeStamp2 = stamp2.Value, DateContext = DateContextEnum.ActualStart};
             
             if(catalog.TimeScopes == null)
                 catalog.TimeScopes = new List<TimeScope>();

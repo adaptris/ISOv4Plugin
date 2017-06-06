@@ -53,7 +53,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
             {
                 X = Convert.ToDouble(isoSpatialRow.EastPosition * CoordinateMultiplier),
                 Y = Convert.ToDouble(isoSpatialRow.NorthPosition * CoordinateMultiplier),
-                Z = isoSpatialRow.Elevation
+                Z = isoSpatialRow.Elevation.Value
             };
 
             spatialRecord.Timestamp = isoSpatialRow.TimeStart;

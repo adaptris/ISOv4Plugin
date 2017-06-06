@@ -75,7 +75,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ExportMappers
             };
             isoFarm.A = isoFarm.GetIsoId(farmIndex);
             if (farm.GrowerId != null)
-                isoFarm.I = keyToIsoId[farm.GrowerId.Value];
+                isoFarm.I = keyToIsoId[farm.GrowerId];
 
             keyToIsoId.Add(farm.Id.ReferenceId, isoFarm.A);
             return isoFarm;
@@ -91,16 +91,16 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ExportMappers
             isoField.A = isoField.GetIsoId(fieldIndex);
             if (field.FarmId != null)
             {
-                isoField.F = keyToIsoId[field.FarmId.Value];
-                var farm = setupCatalog.Farms.First(f => f.Id.ReferenceId == field.FarmId.Value);
+                isoField.F = keyToIsoId[field.FarmId];
+                var farm = setupCatalog.Farms.First(f => f.Id.ReferenceId == field.FarmId);
                 if (farm.GrowerId != null)
                 {
-                    isoField.E = keyToIsoId[farm.GrowerId.Value];
+                    isoField.E = keyToIsoId[farm.GrowerId];
                 }
             }
             if (field.ActiveBoundaryId != null)
             {
-                var boundary = setupCatalog.FieldBoundaries.Single(b => b.Id.ReferenceId == field.ActiveBoundaryId.Value);
+                var boundary = setupCatalog.FieldBoundaries.Single(b => b.Id.ReferenceId == field.ActiveBoundaryId);
                 isoField.Items = new IWriter[] {_boundaryMapper.Map(boundary.SpatialData, BoundaryType.Field, boundary.Description)};
             }
 

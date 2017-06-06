@@ -82,7 +82,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
             {
                 if (cropZone.FieldId == fieldId.ReferenceId)
                 {
-                    var cropId = TaskWriter.Crops.FindById(cropZone.CropId.Value);
+                    var cropId = TaskWriter.Crops.FindById(cropZone.CropId);
                     writer.WriteXmlAttribute("G", cropId);
                     break;
                 }

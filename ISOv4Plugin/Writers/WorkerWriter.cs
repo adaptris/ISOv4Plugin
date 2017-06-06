@@ -41,9 +41,9 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
             writer.WriteAttributeString("B", person.LastName);
             writer.WriteXmlAttribute("C", person.FirstName);
 
-            if (person.ContactInfoId.HasValue)
+            if (person.ContactInfoId > 0)
             {
-                var contactInfo = FindContactInfo(person.ContactInfoId.Value);
+                var contactInfo = FindContactInfo(person.ContactInfoId);
                 WriteContactInfo(writer, contactInfo);
             }
             writer.WriteEndElement();

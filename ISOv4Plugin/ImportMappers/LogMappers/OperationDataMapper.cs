@@ -55,7 +55,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
                 GetSpatialRecords = () => _spatialRecordMapper.Map(isoRecords, meters),
                 MaxDepth = 0,
                 GetDeviceElementUses = x => x == 0 ? sections : new List<DeviceElementUse>(),
-                PrescriptionId = prescrptionId
+                PrescriptionId = prescrptionId.Value
             };
             operationData.Id.UniqueIds.Add(_uniqueIdMapper.Map(tlg.A));
 

@@ -55,7 +55,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
             {
                 var workItemIds = TaskWriter.DataModel.Documents.WorkOrders.SelectMany(wo => wo.WorkItemIds).ToList();
                 rxIdsWithWorkOrders = TaskWriter.DataModel.Documents.WorkItemOperations.Where(
-                    op => workItemIds.Contains(op.Id.ReferenceId)).Select(op => op.PrescriptionId.GetValueOrDefault(0)).ToList();
+                    op => workItemIds.Contains(op.Id.ReferenceId)).Select(op => op.PrescriptionId).ToList();
             }
             foreach (var prescription in TaskWriter.DataModel.Catalog.Prescriptions.OfType<RasterGridPrescription>())
             {
@@ -135,13 +135,13 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
             {
                 if (field.Id.ReferenceId == fieldId)
                 {
-                    if (field.FarmId.HasValue)
+                    if (field.FarmId > 0)
                     {
-                        var farmId = TaskWriter.Farms.FindById(field.FarmId.Value);
+                        var farmId = TaskWriter.Farms.FindById(field.FarmId);
                         writer.WriteXmlAttribute("D", farmId);
 
                         if (!string.IsNullOrEmpty(farmId))
-                            WriteCustomerMeta(writer, field.FarmId.Value);
+                            WriteCustomerMeta(writer, field.FarmId);
                     }
                     break;
                 }
@@ -154,9 +154,9 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
             {
                 if (farm.Id.ReferenceId == farmId)
                 {
-                    if (farm.GrowerId.HasValue)
+                    if (farm.GrowerId > 0)
                     {
-                        var customerId = TaskWriter.Customers.FindById(farm.GrowerId.Value);
+                        var customerId = TaskWriter.Customers.FindById(farm.GrowerId);
                         writer.WriteXmlAttribute("C", customerId);
                     }
                     break;

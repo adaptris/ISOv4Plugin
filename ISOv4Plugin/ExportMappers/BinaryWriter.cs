@@ -93,7 +93,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ExportMappers
 
             var north = (Int32) (location.Y/CoordinateMultiplier);
             var east = (Int32) (location.X/CoordinateMultiplier);
-            var up = (Int32) (location.Z.GetValueOrDefault());
+            var up = (Int32) (location.Z);
 
             var northStream = new MemoryStream(BitConverter.GetBytes(north));
             northStream.WriteTo(memoryStream);
