@@ -31,7 +31,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin
 
         public XmlWriter Export(ApplicationDataModel.ADM.ApplicationDataModel applicationDataModel, string taskDataPath, TaskDocumentWriter writer)
         {
-            var isoTaskData = writer.Write(taskDataPath, applicationDataModel);
+			XmlWriter isoTaskData = taskDataPath != null ? writer.Write(taskDataPath, applicationDataModel) : writer.Write(applicationDataModel);
 
             if (applicationDataModel != null)
             {
@@ -56,24 +56,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin
 
 		public string Export(ApplicationDataModel.ADM.ApplicationDataModel applicationDataModel, TaskDocumentWriter writer)
 		{
-			var isoTaskData = writer.Write(applicationDataModel);
-
-			if (applicationDataModel != null)
-			{
-				var numberOfExistingTasks = GetNumberOfExistingTasks(isoTaskData, writer);
-				var tasks = applicationDataModel.Documents == null
-					? null
-					: _taskMapper.Map(applicationDataModel.Documents.LoggedData, applicationDataModel.Catalog, "miscellaneous", numberOfExistingTasks, writer, false);
-				if (tasks != null)
-				{
-					var taskList = tasks.ToList();
-					taskList.ForEach(t => t.WriteXML(isoTaskData));
-				}
-			}
-
-			//Close the root element with </ISO11783_TaskData>
-			isoTaskData.WriteEndElement();
-			isoTaskData.Close();
+			Export(applicationDataModel, null, writer);
 			return Encoding.UTF8.GetString(writer.XmlStream.ToArray());
 		}
 
@@ -83,11 +66,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin
 			{
 				return null;
 			}
-			return JsonConvert.SerializeObject(applicationDataModel, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
-			{
-				TypeNameHandling = TypeNameHandling.Objects,
-				TypeNameAssemblyFormat = System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple
-			});
+			return JsonConvert.SerializeObject(applicationDataModel, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings {});
 		}
 
         private static int GetNumberOfExistingTasks(XmlWriter data, TaskDocumentWriter isoTaskData)

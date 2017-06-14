@@ -15,15 +15,14 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
 		{
 			JObject jo = JObject.Load(reader);
-			string type = jo["$type"].Value<string>();
-			switch (type)
+			if (jo["IngredientCode"] != null)
 			{
-				case "AgGateway.ADAPT.ApplicationDataModel.Ingredient.CropNutritionIngredient, AgGateway.ADAPT.ApplicationDataModel":
-					return jo.ToObject<CropNutritionIngredient>(serializer);
-				case "AgGateway.ADAPT.ApplicationDataModel.Ingredient.ActiveIngredient, AgGateway.ADAPT.ApplicationDataModel":
-					return jo.ToObject<ActiveIngredient>(serializer);
+				return jo.ToObject<CropNutritionIngredient>(serializer);
 			}
-			return null;
+			else
+			{
+				return jo.ToObject<ActiveIngredient>(serializer);
+			}
 		}
 
 		public override bool CanWrite

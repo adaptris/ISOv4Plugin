@@ -15,23 +15,27 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
 		{
 			JObject jo = JObject.Load(reader);
-			string type = jo["$type"].Value<string>();
-			switch (type)
+			if (isCropNutritionProduct(jo))
 			{
-				case "AgGateway.ADAPT.ApplicationDataModel.Products.CropNutritionProduct, AgGateway.ADAPT.ApplicationDataModel":
-					return jo.ToObject<CropNutritionProduct>(serializer);
-				case "AgGateway.ADAPT.ApplicationDataModel.Products.CropProtectionProduct, AgGateway.ADAPT.ApplicationDataModel":
-					return jo.ToObject<CropProtectionProduct>(serializer);
-				case "AgGateway.ADAPT.ApplicationDataModel.Products.CropVarietyProduct, AgGateway.ADAPT.ApplicationDataModel":
-					return jo.ToObject<CropVarietyProduct>(serializer);
-				case "AgGateway.ADAPT.ApplicationDataModel.Products.MixProduct, AgGateway.ADAPT.ApplicationDataModel":
-					return jo.ToObject<MixProduct>(serializer);
-				case "AgGateway.ADAPT.ApplicationDataModel.Products.HarvestedCommodityProduct, AgGateway.ADAPT.ApplicationDataModel":
-					return jo.ToObject<HarvestedCommodityProduct>(serializer);
-				case "AgGateway.ADAPT.ApplicationDataModel.Products.GenericProduct, AgGateway.ADAPT.ApplicationDataModel":
-					return jo.ToObject<GenericProduct>(serializer);
+				return jo.ToObject<CropNutritionProduct>(serializer);
 			}
-			return null;
+			if (isCropProtectionProduct(jo))
+			{
+				return jo.ToObject<CropProtectionProduct>(serializer);
+			}
+			if (isCropVarietyProduct(jo))
+			{
+				return jo.ToObject<CropVarietyProduct>(serializer);
+			}
+			if (isMixProduct(jo))
+			{
+				return jo.ToObject<MixProduct>(serializer);
+			}
+			if (isHarvestedCommodityProduct(jo))
+			{
+				return jo.ToObject<HarvestedCommodityProduct>(serializer);
+			}
+			return jo.ToObject<GenericProduct>(serializer);
 		}
 
 		public override bool CanWrite
@@ -42,6 +46,31 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 		{
 			serializer.Serialize(writer, value);
+		}
+
+		private bool isCropNutritionProduct(JObject jo)
+		{
+			return jo["IsManure"] != null;
+		}
+
+		private bool isCropProtectionProduct(JObject jo)
+		{
+			return jo["Biological"] != null && jo["Organophosphate"] != null && jo["Carbamate"] != null;
+		}
+
+		private bool isCropVarietyProduct(JObject jo)
+		{
+			return jo["CropId"] != null && jo["TraitIds"] != null && jo["GeneticallyEnhanced"] != null;
+		}
+
+		private bool isMixProduct(JObject jo)
+		{
+			return jo["TotalQuantity"] != null && jo["IsTemporary"] != null && jo["IsHotMix"] != null;
+		}
+
+		private bool isHarvestedCommodityProduct(JObject jo)
+		{
+			return jo["CropId"] != null;
 		}
 	}
 }
