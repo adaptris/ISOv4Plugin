@@ -17,6 +17,6 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
 
     public class ISOEnumeratedMeter : EnumeratedWorkingData
     {
-        public Func<SpatialValue, ISOEnumeratedMeter, EnumeratedValue> GetEnumeratedValue { get; set;}   
+        public System.Func<SpatialValue, ISOEnumeratedMeter, EnumeratedValue> GetEnumeratedValue { get; set;}   
     }
 }
