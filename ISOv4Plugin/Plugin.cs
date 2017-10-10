@@ -3,21 +3,24 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using AgGateway.ADAPT.ApplicationDataModel.ADM;
-using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Prescriptions;
 using AgGateway.ADAPT.ApplicationDataModel.Products;
 using AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers.XmlReaders;
 using AgGateway.ADAPT.ISOv4Plugin.Models;
 using AgGateway.ADAPT.ISOv4Plugin.Writers;
+using log4net.Config;
 
 namespace AgGateway.ADAPT.ISOv4Plugin
 {
     public class Plugin : IPlugin
     {
+		private const string LOG4NET_CONFIG = "log4net.xml";
         private readonly IXmlReader _xmlReader;
         private readonly IImporter _importer;
         private readonly IExporter _exporter;
         private const string FileName = "TASKDATA.XML";
+
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public Plugin() : this(new XmlReader(), new Importer(), new Exporter())
         {
@@ -31,6 +34,8 @@ namespace AgGateway.ADAPT.ISOv4Plugin
             Name = "ISO Plugin";
             Version = "0.1.1";
             Owner = "AgGateway & Contributors";
+			XmlConfigurator.Configure(new FileInfo(LOG4NET_CONFIG));
+			log.Info("Initialising ISOv4 plugin");
         }
 
         public void Initialize(string args = null)

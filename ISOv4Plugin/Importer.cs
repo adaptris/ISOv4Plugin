@@ -20,6 +20,8 @@ namespace AgGateway.ADAPT.ISOv4Plugin
 
     public class Importer : IImporter
     {
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private readonly IDocumentMapper _documentMapper;
 
         public Importer() : this(new DocumentMapper())
@@ -33,6 +35,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin
 
         public ApplicationDataModel.ADM.ApplicationDataModel Import(ISO11783_TaskData iso11783TaskData, string dataPath, ApplicationDataModel.ADM.ApplicationDataModel dataModel, Dictionary<string, List<UniqueId>> linkedIds)
         {
+			log.Info("Importing ISO11783 task data from path " + dataPath + " ...");
             if (dataModel.Catalog == null)
                 dataModel.Catalog = CreateCatalog();
             if (dataModel.Documents == null)
@@ -48,13 +51,23 @@ namespace AgGateway.ADAPT.ISOv4Plugin
             var tasks = isoObjects.GetItemsOfType<TSK>();
 
             _documentMapper.Map(tasks, dataPath, dataModel, linkedIds);
+			log.Info("Imported task data to application data model [ " + dataModel + " ]");
             return dataModel;
         }
 
 		public ApplicationDataModel.ADM.ApplicationDataModel Import(string json)
 		{
-			JsonConverter[] converters = { new ProductJsonMapper(), new IngredientJsonMapper() };
-			return JsonConvert.DeserializeObject<ApplicationDataModel.ADM.ApplicationDataModel>(json, new JsonSerializerSettings() { Converters = converters });
+			log.Info("Importing JSON data to application datal model ...");
+			JsonConverter[] converters =
+			{
+				new ProductJsonMapper(),
+				new IngredientJsonMapper(),
+				new DeviceElementConfigurationJsonMapper(),
+				new GuidancePatternJsonMapper()
+			};
+			var adm = JsonConvert.DeserializeObject<ApplicationDataModel.ADM.ApplicationDataModel>(json, new JsonSerializerSettings() { Converters = converters });
+			log.Info("Imported JSON to application data model [ " + adm + " ]");
+			return adm;
 		}
 
         private static Documents CreateDocuments()
