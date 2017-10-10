@@ -3130,7 +3130,7 @@ none
 
 
 DD Entity: 130 Auxiliary Valve Float Threshold
-Definition: Safety function. Current output of valve must be above threshold before float command is allowed.
+Definition: SafetySystem.Function. Current output of valve must be above threshold before float command is allowed.
 Comment: 
 Typically used by Device Classes: 
 Not Assigned
@@ -7766,7 +7766,7 @@ none
 
 
 DD Entity: 287 Setpoint Prescription Mode
-Definition: This DDE defines the source of the Task Controller set point value sent to the Control Function. This DDI shall be defined as DPD in the DDOP and needs to be setable. The TC shall then set this DDI before starting a prescription operation. The WS (Working Set) shall set this value to zero (0) after system start.  
+Definition: This DDE defines the source of the Task Controller set point value sent to the ControlSystem.Function. This DDI shall be defined as DPD in the DDOP and needs to be setable. The TC shall then set this DDI before starting a prescription operation. The WS (Working Set) shall set this value to zero (0) after system start.  
 Comment: The Task Controller Prescription Mode shall have the following values:
   0 = Unknown / not defined
   1 = Prescription Rate
@@ -7797,8 +7797,8 @@ http://dictionary.isobus.net/isobus/attachments/401/Prescription Mode Supporting
 
 
 DD Entity: 288 Actual Prescription Mode
-Definition: This DDE defines the actual source of the set point value used by the Control Function. This DDI shall be defined as DPD in the DDOP and shall not be setable and need to support the on change trigger. The TC should request this DDI in case of an active prescription operation for documentation purpose. 
-Comment: The Control Function Prescription Mode sahll have one of the following values:
+Definition: This DDE defines the actual source of the set point value used by the ControlSystem.Function. This DDI shall be defined as DPD in the DDOP and shall not be setable and need to support the on change trigger. The TC should request this DDI in case of an active prescription operation for documentation purpose. 
+Comment: The ControlSystem.Function Prescription Mode sahll have one of the following values:
   0 = Unknown / not defined
   1 = TC rate
   2 = Manual Entry
@@ -9585,9 +9585,9 @@ none
 
 
 
-DD Entity: 350 Function Type
-Definition: The Function Type DDE can be used to define the operation or functionality performed by the device element of type Function defined within the DDOP. The values to be used are defined in the attached document.
-Comment: In a DDOP (Device Description Object Pool) of an ISOBUS device there are different functionalities covered. The device element types in the Task Controller standard which are Device, Function, Bin, Section, Unit, Connector Type, and Navigation Reference do not last out for certain or more complex devices to describe all information in a unique way to the Task Controller Server. For more information see the attached document.
+DD Entity: 350System.Function Type
+Definition: TheSystem.Function Type DDE can be used to define the operation orSystem.Functionality performed by the device element of typeSystem.Function defined within the DDOP. The values to be used are defined in the attached document.
+Comment: In a DDOP (Device Description Object Pool) of an ISOBUS device there are differentSystem.Functionalities covered. The device element types in the Task Controller standard which are Device,System.Function, Bin, Section, Unit, Connector Type, and Navigation Reference do not last out for certain or more complex devices to describe all information in a unique way to the Task Controller Server. For more information see the attached document.
 Typically used by Device Classes: 
 1 - Tractor
 2 - Primary Soil Tillage

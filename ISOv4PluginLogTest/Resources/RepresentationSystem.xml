@@ -1583,7 +1583,7 @@
 			<Name locale="pl" description="Wartość dotycząca PartiiZiarna OdmianyUprawy używana do przeliczenia z nasion na funty lub funtów na nasiona, albo innych jednostek ciężaru wg potrzeby.">NasionNaCiężar</Name>
 			<Name locale="bg" description="Необходима е мярка, свързана със СерияСемена РазновидностНаКултурата, за да се превръща от семена във фунтове или фунтове в семена или друга единица за маса.">Семенанамаса</Name>
 			<Name locale="hr" description="Mjera povezana s opcijama VrstaKulture ČesticaZaSijanje korištena za pretvaranje sjemena u funte ili funte u sjeme ili ostale mjerne jedinice po potrebi.">SjemePoJediniciMase</Name>
-			<Name locale="ro" description="Unitate de măsură asociată cu CropVariety SeedLot, utilizată pentru conversia din seminţe în livre sau din livre în seminţe sau alte unităţi de măsură a masei în funcţie de necesităţi.">SeedsPerMass</Name>
+			<Name locale="ro" description="Unitate de măsură asociată cu CropVariety SeedLot, utilizată pentru conversia din seminţe în livre sau din livre în seminţe sau alte unităţi de măsură a masei înSystem.Funcţie de necesităţi.">SeedsPerMass</Name>
 			<Name locale="tr" description="Gereksinime göre tohumdan libreye veya libreden tohuma ya da diğer ağırlık birimlerine dönüştürmede kullanılan EkinÇeşit TohumLotu ile ilişkili bir ölçü.">TohumBölüKütle</Name>
 			<Name locale="el" description="Μια μετρική μονάδα που συνδυάζεται με Σπορομερίδα Ποικιλίας Καλλιέργειας για τη μετατροπή σπόρων σε λίβρες ή λιβρών σε σπόρους ή άλλη μονάδα μάζας.">ΣπόροιΑνάΜάζα</Name>
 			<Name locale="is" description="Metrakerfi sem tilheyrir uppskerutegund sæðishlutar sem notað er til að breyta frá sæði í pund eða frá pundum í sæði eða aðra massaeiningu.">Sæðiárúmtak</Name>
@@ -3277,7 +3277,7 @@
 			<Name locale="fr" description="Durée totale travail.">Durée totale travail</Name>
 			<Name locale="da" description="Total arbejdstid.">Total arbejdstid</Name>
 			<Name locale="nl" description="Totale bedrijfstijd.">Totale Bedrijfstijd</Name>
-			<Name locale="es" description="Tiempo total de funcionamiento.">Tiempo total de funcionamiento</Name>
+			<Name locale="es" description="Tiempo total deSystem.Funcionamiento.">Tiempo total deSystem.Funcionamiento</Name>
 			<Name locale="it" description="Tempo operazioni totale.">Tempo operazioni totale</Name>
 			<Name locale="pt" description="Tempo total de operação.">Tempo Total de Operação</Name>
 			<Name locale="ru" description="Общее рабочее время.">Общее рабочее время</Name>
@@ -3293,7 +3293,7 @@
 			<Name locale="pl" description="Całkowity czas pracy.">Całkowity czas pracy</Name>
 			<Name locale="bg" description="Общо време за работа.">Общо време за работа</Name>
 			<Name locale="hr" description="Ukupno vrijeme rada.">Ukupno vrijeme rada</Name>
-			<Name locale="ro" description="Timp total de funcţionare.">Timp total de funcţionare</Name>
+			<Name locale="ro" description="Timp total deSystem.Funcţionare.">Timp total deSystem.Funcţionare</Name>
 			<Name locale="tr" description="Toplam çalışma süresi.">Toplam Çalışma Süresi</Name>
 			<Name locale="el" description="Συνολ. χρόνος λειτουργ.">Συνολ. Χρόνος Λειτουργ.</Name>
 			<Name locale="is" description="Heildar notkunartími.">Heildar notkunartími</Name>
@@ -7022,7 +7022,7 @@
 			<Name locale="fr" description="Décalage de distance de fonction par rapport à une bordure">Décalage de distance de fonction par rapport à une bordure</Name>
 			<Name locale="da" description="Funktionsforskydningsafstand fra en grænse">Funktionsforskydningsafstand fra en grænse</Name>
 			<Name locale="nl" description="Functie offset-afstand vanaf een grens">Functie offset-afstand vanaf een grens</Name>
-			<Name locale="es" description="Distancia de desplazamiento de función partiendo de una frontera">Distancia de desplazamiento de función partiendo de una frontera</Name>
+			<Name locale="es" description="Distancia de desplazamiento deSystem.Función partiendo de una frontera">Distancia de desplazamiento deSystem.Función partiendo de una frontera</Name>
 			<Name locale="it" description="Distanza scarto funzione da un confine">Distanza scarto funzione da un confine</Name>
 			<Name locale="pt" description="Distância do desvio da função a partir de um limite">Distância do desvio da função a partir de um limite</Name>
 			<Name locale="ru" description="Смещение расстояния функции от границы">Смещение расстояния функции от границы</Name>
@@ -7038,7 +7038,7 @@
 			<Name locale="pl" description="Odległość przesunięcia funkcji od granicy">Odległość przesunięcia funkcji od granicy</Name>
 			<Name locale="bg" description="Функция отместване на разстояние от граница">Функция отместване на разстояние от граница</Name>
 			<Name locale="hr" description="Pomak funkcije, udaljenost od granice">Pomak funkcije, udaljenost od granice</Name>
-			<Name locale="ro" description="Distanţă decalaj funcţie de la un perimetru">Distanţă decalaj funcţie de la un perimetru</Name>
+			<Name locale="ro" description="Distanţă decalajSystem.Funcţie de la un perimetru">Distanţă decalajSystem.Funcţie de la un perimetru</Name>
 			<Name locale="tr" description="Sınırdan olan fonksiyon ofset mesafesi">Sınırdan olan fonksiyon ofset mesafesi</Name>
 			<Name locale="el" description="Απόσταση μετατόπισης λειτουργίας από όριο">Απόσταση μετατόπισης λειτουργίας από όριο</Name>
 			<Name locale="is" description="Hliðrunarfjarlægð aðgerðar frá jaðri">Hliðrunarfjarlægð aðgerðar frá jaðri</Name>
@@ -7061,12 +7061,12 @@
 			<UnitOfMeasureDefault unitOfMeasure="km1hr-1" digits="2" decimal="1" minValue="0.5" maxValue="48.28032" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="mi1hr-1" digits="2" decimal="1" minValue="0.4" maxValue="30" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utSpeed"/>
-			<Name locale="en" description="Speed value associated with a function in a sequence">Speed value associated with a function in a sequence</Name>
+			<Name locale="en" description="Speed value associated with aSystem.Function in a sequence">Speed value associated with aSystem.Function in a sequence</Name>
 			<Name locale="de" description="Einer Funktion in einer Reihenfolge zugeordneter Geschwindigkeitswert">Einer Funktion in einer Reihenfolge zugeordneter Geschwindigkeitswert</Name>
 			<Name locale="fr" description="Valeur de vitesse associée à une fonction d'une séquence">Valeur de vitesse associée à une fonction d'une séquence</Name>
 			<Name locale="da" description="Hastighedsværdi associeret med en funktion i en sekvens">Hastighedsværdi associeret med en funktion i en sekvens</Name>
-			<Name locale="nl" description="Snelheidswaarde die bij een functie in een volgorde behoort">Snelheidswaarde die bij een functie in een volgorde behoort</Name>
-			<Name locale="es" description="Valor de velocidad relacionado con una función en una secuencia">Valor de velocidad relacionado con una función en una secuencia</Name>
+			<Name locale="nl" description="Snelheidswaarde die bij eenSystem.Functie in een volgorde behoort">Snelheidswaarde die bij eenSystem.Functie in een volgorde behoort</Name>
+			<Name locale="es" description="Valor de velocidad relacionado con unaSystem.Función en una secuencia">Valor de velocidad relacionado con unaSystem.Función en una secuencia</Name>
 			<Name locale="it" description="Valore di velocità legato a una funzione entro una data sequenza">Valore di velocità legato a una funzione entro una data sequenza</Name>
 			<Name locale="pt" description="Valor de velocidade associado a uma função em um seqüência">Valor de velocidade associado a uma função em um seqüência</Name>
 			<Name locale="ru" description="Значение скорости, связанное с функцией последовательности">Значение скорости, связанное с функцией последовательности</Name>
@@ -7082,7 +7082,7 @@
 			<Name locale="pl" description="Szybkość związana z funkcją w sekwencji">Szybkość związana z funkcją w sekwencji</Name>
 			<Name locale="bg" description="Стойност на скоростта, свързана с функция в последователност">Стойност на скоростта, свързана с функция в последователност</Name>
 			<Name locale="hr" description="Vrijednost brzine pridružena funkciji u slijedu">Vrijednost brzine pridružena funkciji u slijedu</Name>
-			<Name locale="ro" description="Valoare viteză asociată unei funcţii în cadrul unei secvenţe">Valoare viteză asociată unei funcţii în cadrul unei secvenţe</Name>
+			<Name locale="ro" description="Valoare viteză asociată uneiSystem.Funcţii în cadrul unei secvenţe">Valoare viteză asociată uneiSystem.Funcţii în cadrul unei secvenţe</Name>
 			<Name locale="tr" description="Sıralamadaki bir fonksiyonla ilişkili hız değeri">Sıralamadaki bir fonksiyonla ilişkili hız değeri</Name>
 			<Name locale="el" description="Τιμή ταχύτητας συσχετισμένη με λειτουργία σε ακολουθία">Τιμή ταχύτητας συσχετισμένη με λειτουργία σε ακολουθία</Name>
 			<Name locale="is" description="Hraðagildi sem tilheyrir aðgerð í runu">Hraðagildi sem tilheyrir aðgerð í runu</Name>
@@ -7105,12 +7105,12 @@
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="4" decimal="0" minValue="0" maxValue="8031" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="4" decimal="0" minValue="0" maxValue="8031" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utAngularVelocity"/>
-			<Name locale="en" description="Engine Speed value associated with a function in a sequence">Engine Speed value associated with a function in a sequence</Name>
+			<Name locale="en" description="Engine Speed value associated with aSystem.Function in a sequence">Engine Speed value associated with aSystem.Function in a sequence</Name>
 			<Name locale="de" description="Einer Funktion in einer Abfolge zugeordneter Motordrehzahlwert">Einer Funktion in einer Abfolge zugeordneter Motordrehzahlwert</Name>
 			<Name locale="fr" description="Valeur de régime moteur associée à une fonction d'une séquence">Valeur de régime moteur associée à une fonction d'une séquence</Name>
 			<Name locale="da" description="Motorhastighedsværdi i forbindelse med en funktion i en sekvens">Motorhastighedsværdi i forbindelse med en funktion i en sekvens</Name>
-			<Name locale="nl" description="Motortoerentalwaarde behorend bij een functie in een volgorde">Motortoerentalwaarde behorend bij een functie in een volgorde</Name>
-			<Name locale="es" description="Valor de velocidad del motor relacionado con una función en una secuencia">Valor de velocidad del motor relacionado con una función en una secuencia</Name>
+			<Name locale="nl" description="Motortoerentalwaarde behorend bij eenSystem.Functie in een volgorde">Motortoerentalwaarde behorend bij eenSystem.Functie in een volgorde</Name>
+			<Name locale="es" description="Valor de velocidad del motor relacionado con unaSystem.Función en una secuencia">Valor de velocidad del motor relacionado con unaSystem.Función en una secuencia</Name>
 			<Name locale="it" description="Valore regime motore associato con una funzione in una sequenza">Valore regime motore associato con una funzione in una sequenza</Name>
 			<Name locale="pt" description="Valor da velocidade do motor associado a uma função em uma sequência">Valor da velocidade do motor associado a uma função em uma sequência</Name>
 			<Name locale="ru" description="Число оборотов двигателя, связанное с последовательной функцией">Число оборотов двигателя, связанное с последовательной функцией</Name>
@@ -7126,7 +7126,7 @@
 			<Name locale="pl" description="Szybkość silnika związana z funkcją w sekwencji">Szybkość silnika związana z funkcją w sekwencji</Name>
 			<Name locale="bg" description="Стойност на оборотите на двигателя, свързана с функция в последователността">Стойност на оборотите на двигателя, свързана с функция в последователността</Name>
 			<Name locale="hr" description="Vrijednost brzine motora povezana s funkcijom u slijedu">Vrijednost brzine motora povezana s funkcijom u slijedu</Name>
-			<Name locale="ro" description="Valoare turaţie motor asociată unei funcţii în cadrul unei secvenţe">Valoare turaţie motor asociată unei funcţii în cadrul unei secvenţe</Name>
+			<Name locale="ro" description="Valoare turaţie motor asociată uneiSystem.Funcţii în cadrul unei secvenţe">Valoare turaţie motor asociată uneiSystem.Funcţii în cadrul unei secvenţe</Name>
 			<Name locale="tr" description="Sıradaki işlevle ilişkili Motor Hızı değeri">Sıradaki işlevle ilişkili Motor Hızı değeri</Name>
 			<Name locale="el" description="Η τιμή ταχύτητας της μηχανής σχετιζ με τη λειτουργία σε σειρά">Η τιμή ταχύτητας της μηχανής σχετιζ με τη λειτουργία σε σειρά</Name>
 			<Name locale="is" description="Hraðagildi vélar sem tilheyrir aðgerð í runu">Hraðagildi vélar sem tilheyrir aðgerð í runu</Name>
@@ -21900,12 +21900,12 @@
 			</EnumeratedMember>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtFunctionType" domainTag="1019" domainIDShort="Functi02">
-			<Name locale="en" description="Boundary Function Type">Function Type</Name>
+			<Name locale="en" description="BoundarySystem.Function Type">Function Type</Name>
 			<Name locale="de" description="Vermessungsfunktionstyp">Funktionstyp</Name>
 			<Name locale="fr" description="Type de fonction de bordure">Type de fonction</Name>
 			<Name locale="da" description="Grænsefunktionstype">Funktionstype</Name>
-			<Name locale="nl" description="Type Grensfunctie">Type Functie</Name>
-			<Name locale="es" description="Tipo de función de frontera">Tipo de función</Name>
+			<Name locale="nl" description="Type Grensfunctie">TypeSystem.Functie</Name>
+			<Name locale="es" description="Tipo deSystem.Función de frontera">Tipo deSystem.Función</Name>
 			<Name locale="it" description="Tipo funzione confine">Tipo funzione</Name>
 			<Name locale="pt" description="Tipo de Função do Limite">Tipo de Função</Name>
 			<Name locale="ru" description="Тип функции границы">Тип функции</Name>
@@ -21921,7 +21921,7 @@
 			<Name locale="pl" description="Rodzaj funkcji granicznej">Rodzaj funkcji</Name>
 			<Name locale="bg" description="Тип на функцията на границата">Тип Функция</Name>
 			<Name locale="hr" description="Vrsta funkcije granice">Vrsta funkcije</Name>
-			<Name locale="ro" description="Tip funcţie perimetru">Tip funcţie</Name>
+			<Name locale="ro" description="TipSystem.Funcţie perimetru">TipSystem.Funcţie</Name>
 			<Name locale="tr" description="Sınır Fonksiyonu Tipi">Fonksiyon Tipi</Name>
 			<Name locale="el" description="Τύπος Οριακής Λειτουργίας">Τύπος Λειτουργίας</Name>
 			<Name locale="is" description="Jaðaraðgerðargerð">Aðgerðargerð</Name>
