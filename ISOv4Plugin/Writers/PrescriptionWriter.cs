@@ -50,7 +50,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
 
         private void WritePrescriptions()
         {
-            var rxIdsWithWorkOrders = new List<int>();
+            var rxIdsWithWorkOrders = new List<int?>();
             if (TaskWriter.DataModel != null && TaskWriter.DataModel.Documents != null)
             {
                 var workItemIds = TaskWriter.DataModel.Documents.WorkOrders.SelectMany(wo => wo.WorkItemIds).ToList();
@@ -137,11 +137,11 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
                 {
                     if (field.FarmId > 0)
                     {
-                        var farmId = TaskWriter.Farms.FindById(field.FarmId);
+                        var farmId = TaskWriter.Farms.FindById(field.FarmId ?? default(int));
                         writer.WriteXmlAttribute("D", farmId);
 
                         if (!string.IsNullOrEmpty(farmId))
-                            WriteCustomerMeta(writer, field.FarmId);
+                            WriteCustomerMeta(writer, field.FarmId ?? default(int));
                     }
                     break;
                 }
@@ -156,7 +156,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.Writers
                 {
                     if (farm.GrowerId > 0)
                     {
-                        var customerId = TaskWriter.Customers.FindById(farm.GrowerId);
+                        var customerId = TaskWriter.Customers.FindById(farm.GrowerId ?? default(int));
                         writer.WriteXmlAttribute("C", customerId);
                     }
                     break;

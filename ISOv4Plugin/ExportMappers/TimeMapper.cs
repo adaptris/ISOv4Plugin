@@ -38,7 +38,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ExportMappers
             if (timeScope.TimeStamp2 == null)
                 return DateTime.MinValue;
 
-            return timeScope.TimeStamp2;
+            return timeScope.TimeStamp2 ?? default(DateTime);
         }
 
         private DateTime FindActualStartTime(TimeScope timeScope)
@@ -46,7 +46,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ExportMappers
             if (timeScope.TimeStamp1 == null)
                 return DateTime.MinValue;
 
-            return timeScope.TimeStamp1;
+            return timeScope.TimeStamp1 ?? default(DateTime);
         }
     }
 }

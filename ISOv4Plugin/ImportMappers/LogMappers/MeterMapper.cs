@@ -53,13 +53,14 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
                 meters.Add(MapNumericMeter(dlv, sectionId, order));
                 return meters;
             }
-            var meterCreator = _enumeratedMeterCreatorFactory.GetMeterCreator(Convert.ToInt32(dlv.A, 16));
+			// FIXME this causes problem swhen exporting as ADM
+            /*var meterCreator = _enumeratedMeterCreatorFactory.GetMeterCreator(Convert.ToInt32(dlv.A, 16));
             if(meterCreator != null)
             {
                 var isoEnumeratedMeters = meterCreator.CreateMeters(isoSpatialRows);
                 isoEnumeratedMeters.ForEach(x => x.Id.UniqueIds.Add(_uniqueIdMapper.Map("DLV" + order)));
                 meters.AddRange(isoEnumeratedMeters);
-            }
+            }*/
             return meters;
         }
 
