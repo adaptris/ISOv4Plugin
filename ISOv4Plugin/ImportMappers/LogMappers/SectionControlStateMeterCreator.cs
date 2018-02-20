@@ -20,15 +20,15 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
             DDI = ddi;
         }
 
-        public List<ISOEnumeratedMeter> CreateMeters(IEnumerable<ISOSpatialRow> spatialRows)
+        public List<EnumeratedWorkingData> CreateMeters(IEnumerable<ISOSpatialRow> spatialRows)
         {
-            var meter = new ISOEnumeratedMeter
+            var meter = new EnumeratedWorkingData
             {
                 Representation = RepresentationInstanceList.dtSectionControlMasterState.ToModelRepresentation(),
-                GetEnumeratedValue = GetValueForMeter
+                //GetEnumeratedValue = GetValueForMeter
             };
 
-            return new List<ISOEnumeratedMeter> { meter };
+            return new List<EnumeratedWorkingData> { meter };
         }
 
         public EnumeratedValue GetValueForMeter(SpatialValue value, EnumeratedWorkingData meter)

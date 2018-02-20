@@ -10,7 +10,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
     {
         int DDI { get; set; }
         int StartingSection { get; }
-        List<ISOEnumeratedMeter> CreateMeters(IEnumerable<ISOSpatialRow> spatialRows);
+        List<EnumeratedWorkingData> CreateMeters(IEnumerable<ISOSpatialRow> spatialRows);
         EnumeratedValue GetValueForMeter(SpatialValue value, EnumeratedWorkingData workingData);
         UInt32 GetMetersValue(List<WorkingData> meters, SpatialRecord spatialRecord);
     }

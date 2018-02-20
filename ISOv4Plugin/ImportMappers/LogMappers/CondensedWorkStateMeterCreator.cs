@@ -101,7 +101,7 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
 
         public Dictionary<int, EnumerationMember> SectionValueToEnumerationMember { get; set; } 
 
-        public List<ISOEnumeratedMeter> CreateMeters(IEnumerable<ISOSpatialRow> spatialRows)
+        public List<EnumeratedWorkingData> CreateMeters(IEnumerable<ISOSpatialRow> spatialRows)
         {
             var spatialRowWithDdi = spatialRows.FirstOrDefault(x => x.SpatialValues.Any(y => Convert.ToInt32(y.Dlv.A, 16) == DDI));
 
@@ -112,14 +112,14 @@ namespace AgGateway.ADAPT.ISOv4Plugin.ImportMappers.LogMappers
                 numberOfSections = GetNumberOfInstalledSections(spatialValue);
             }
 
-            var meters = new List<ISOEnumeratedMeter>();
+            var meters = new List<EnumeratedWorkingData>();
             for (int i = StartingSection; i < StartingSection + numberOfSections; i++)
             {
-                meters.Add(new ISOEnumeratedMeter
+                meters.Add(new EnumeratedWorkingData
                 {
                     DeviceElementUseId = i,
                     Representation = Representation,
-                    GetEnumeratedValue = GetValueForMeter
+                    //GetEnumeratedValue = GetValueForMeter
                 });
             }
 
